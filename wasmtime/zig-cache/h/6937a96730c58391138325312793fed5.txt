@@ -1,0 +1,7 @@
+152 5066549581092463 1638010749208267500 8290aab6c2a2435bd894df128757386a C:\Users\rfran\source\test\wasmtime\helloworld.zig
+5588 1125899907142892 1622836492000000000 b28e8846a1fb551a569b56fcf123a093 C:\ProgramData\chocolatey\lib\zig\tools\zig-windows-x86_64-0.8.0\lib\std\std.zig
+23635 1125899907142370 1622836492000000000 00fbb8fea25ef05eeba646e26bb20cb6 C:\ProgramData\chocolatey\lib\zig\tools\zig-windows-x86_64-0.8.0\lib\std\builtin.zig
+18282 1125899907142890 1622836492000000000 c0d058ca884fd934a4f43772515ed826 C:\ProgramData\chocolatey\lib\zig\tools\zig-windows-x86_64-0.8.0\lib\std\start.zig
+58105 1125899907142894 1622836492000000000 c469f387be311dd300783652c63aa46e C:\ProgramData\chocolatey\lib\zig\tools\zig-windows-x86_64-0.8.0\lib\std\target.zig
+55049 1125899907142529 1622836492000000000 10a7f7ce243a9b00eec13412ab43f638 C:\ProgramData\chocolatey\lib\zig\tools\zig-windows-x86_64-0.8.0\lib\std\math.zig
+47037 1125899907142610 1622836492000000000 1d2192661909773f951eface449f4c97 C:\ProgramData\chocolatey\lib\zig\tools\zig-windows-x86_64-0.8.0\lib\std\meta.zig
