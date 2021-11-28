@@ -1,6 +1,16 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<script type="module" src="./build/Components/HelloWorldComponent.js"></script>
+	<script type="text/javascript" src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+
+	<!-- If your application is compiled to ES5, then load this script first. -->
+    <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <!-- Add support for Web Components to older browsers. -->
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+
+    <!-- Load your application code anytime after loader.js -->
+	<script src="./build/Components/HelloWorldComponent.js"></script>
 </head>
 
 <body>

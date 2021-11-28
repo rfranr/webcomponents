@@ -19,6 +19,9 @@ Patterns
 
 LSP-typescript: https://github.com/sublimelsp/LSP-typescript
 
+* Polyfills
+npm install --save @webcomponents/webcomponentsjs
+
 * Development
 	npm install http-server -g
 		https://stackoverflow.com/questions/6084360/using-node-js-as-a-simple-web-server
@@ -29,4 +32,4 @@ LSP-typescript: https://github.com/sublimelsp/LSP-typescript
 Build
 	https://medium.com/@SunnyB/how-to-convert-es6-into-es5-using-babel-1b533d31a169
 		npm install -D babel-cli
-		
+
