@@ -9,14 +9,24 @@
     <!-- Add support for Web Components to older browsers. -->
     <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
 
+    <!-- TODO: only if needed. -->
+    <!--	Add support for Web Seat to older browsers. -->
+    <script src="https://unpkg.com/@ungap/weakset"></script>
+
     <!-- Load your application code anytime after loader.js -->
-	<script src="./build/Components/HelloWorldComponent.js"></script>
+		<script src="./build/Components/HelloWorldComponent.js"></script>
+		<!-- script src="./src/Components/HelloWorldComponent.js"></script -->
 </head>
 
 <body>
 	<p>A new <code>&lt;hello-world&gt;</code> Web Component......</p>
 
 	<hello-world id="01" wheels="124"></hello-world>
+
+	<script>
+		document.getElementById("01").setAttribute("wheels", "99");
+	</script>
+
 </body>
 
 </html>

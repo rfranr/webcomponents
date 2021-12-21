@@ -28,6 +28,14 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _classPrivateMethodInitSpec(obj, privateSet) { _checkPrivateRedeclaration(obj, privateSet); privateSet.add(obj); }
+
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+
+function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
+
+var _template = /*#__PURE__*/new WeakSet();
+
 /**
  * This class describes a hello world component.
  *
@@ -38,28 +46,23 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
 
   var _super = _createSuper(HelloWorldComponent);
 
+  // -------------------------------------------------- //
   function HelloWorldComponent() {
+    var _this;
+
     _classCallCheck(this, HelloWorldComponent);
 
-    return _super.call(this); // 
-  }
-  /**
-    *  life-cycle: connect component
-    */
+    _this = _super.call(this); // something else
+    // ...
+
+    _classPrivateMethodInitSpec(_assertThisInitialized(_this), _template);
+
+    return _this;
+  } // -------------------------------------------------- //
+  // * Life cycle component
 
 
   _createClass(HelloWorldComponent, [{
-    key: "template",
-    get:
-    /**
-     * { item_description }
-     */
-    //wheels = undefined;
-    function get() {
-      return;
-      "<p>\n      Hello World Pep have ".concat(this.wheels, " wheels\n    </p>");
-    }
-  }, {
     key: "wheels",
     get: function get() {
       return this.getAttribute('wheels');
@@ -70,8 +73,7 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "connectedCallback",
     value: function connectedCallback() {
-      //this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
-      this.innerHTML = this.template;
+      this.innerHTML = _classPrivateMethodGet(this, _template, _template2).call(this);
     }
   }, {
     key: "disconnectedCallback",
@@ -86,11 +88,19 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "attributeChangedCallback",
     value: function attributeChangedCallback(name, oldValue, newValue) {
-      console.log('Custom square element attributes changed.'); //updateStyle(this);
-    }
+      console.log('Custom square element attributes changed.');
+    } // -------------------------------------------------- //
+
   }], [{
     key: "observedAttributes",
-    get: function get() {
+    get:
+    /**
+     * template definition.
+     * Notes: this metthod is private
+     */
+    // -------------------------------------------------- //
+    // * Attributes 
+    function get() {
       return ['wheels'];
     }
   }]);
@@ -98,5 +108,9 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
   return HelloWorldComponent;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement)); // register component
 
+
+function _template2() {
+  return "<p> \n      Hello World Pep have ".concat(this.wheels, " wheels\n    </p>");
+}
 
 customElements.define('hello-world', HelloWorldComponent);

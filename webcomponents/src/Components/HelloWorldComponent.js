@@ -6,16 +6,17 @@
 class HelloWorldComponent extends HTMLElement {
 
   /**
-   * { item_description }
+   * template definition.
+   * Notes: this metthod is private
    */
-  //wheels = undefined;
-
-  get template(){
-    return 
-    `<p>
+  #template(){
+    return `<p> 
       Hello World Pep have ${this.wheels} wheels
     </p>`;
   }
+
+  // -------------------------------------------------- //
+  // * Attributes 
 
   static get observedAttributes() { return ['wheels']; }
 
@@ -26,21 +27,21 @@ class HelloWorldComponent extends HTMLElement {
   set wheels(newValue){
     this.setAttribute('wheels', newValue);
   }
+  // -------------------------------------------------- //
+
 
   constructor(){
     super();
 
-    // 
+    // something else
+    // ...
   }
 
 
-	/**
-   *  life-cycle: connect component
-   */
+  // -------------------------------------------------- //
+  // * Life cycle component
 	connectedCallback(){
-		//this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
-    this.innerHTML = this.template;
-
+    this.innerHTML = this.#template();
 	}
 
   disconnectedCallback() {
@@ -53,8 +54,8 @@ class HelloWorldComponent extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     console.log('Custom square element attributes changed.');
-    //updateStyle(this);
   }
+  // -------------------------------------------------- //
 
 
 }
