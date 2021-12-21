@@ -10,6 +10,13 @@ class HelloWorldComponent extends HTMLElement {
    */
   //wheels = undefined;
 
+  get template(){
+    return 
+    `<p>
+      Hello World Pep have ${this.wheels} wheels
+    </p>`;
+  }
+
   static get observedAttributes() { return ['wheels']; }
 
   get wheels(){
@@ -31,7 +38,9 @@ class HelloWorldComponent extends HTMLElement {
    *  life-cycle: connect component
    */
 	connectedCallback(){
-		this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
+		//this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
+    this.innerHTML = this.template;
+
 	}
 
   disconnectedCallback() {

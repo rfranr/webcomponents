@@ -49,6 +49,17 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
 
 
   _createClass(HelloWorldComponent, [{
+    key: "template",
+    get:
+    /**
+     * { item_description }
+     */
+    //wheels = undefined;
+    function get() {
+      return;
+      "<p>\n      Hello World Pep have ".concat(this.wheels, " wheels\n    </p>");
+    }
+  }, {
     key: "wheels",
     get: function get() {
       return this.getAttribute('wheels');
@@ -59,7 +70,8 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "connectedCallback",
     value: function connectedCallback() {
-      this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
+      //this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
+      this.innerHTML = this.template;
     }
   }, {
     key: "disconnectedCallback",
@@ -78,12 +90,7 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
     }
   }], [{
     key: "observedAttributes",
-    get:
-    /**
-     * { item_description }
-     */
-    //wheels = undefined;
-    function get() {
+    get: function get() {
       return ['wheels'];
     }
   }]);
