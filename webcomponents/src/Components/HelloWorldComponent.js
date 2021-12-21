@@ -1,10 +1,15 @@
 // web component
 class HelloWorldComponent extends HTMLElement {
 
+  constructor(){
+    super();
+
+    // 
+  }
+
 	// connect component
 	connectedCallback(){
-		alert(8)
-		this.textContent = 'Hello World pep';
+		this.textContent = 'Hello World pep ' + 29;
 	}
 }
 

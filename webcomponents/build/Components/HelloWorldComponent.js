@@ -37,15 +37,14 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
   function HelloWorldComponent() {
     _classCallCheck(this, HelloWorldComponent);
 
-    return _super.apply(this, arguments);
-  }
+    return _super.call(this); // 
+  } // connect component
+
 
   _createClass(HelloWorldComponent, [{
     key: "connectedCallback",
-    value: // connect component
-    function connectedCallback() {
-      alert(8);
-      this.textContent = 'Hello World pep';
+    value: function connectedCallback() {
+      this.textContent = 'Hello World pep ' + 29;
     }
   }]);
 
