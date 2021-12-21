@@ -28,7 +28,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-// web component
+/**
+ * This class describes a hello world component.
+ *
+ * @class      HelloWorldComponent (name)
+ */
 var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
   _inherits(HelloWorldComponent, _HTMLElement);
 
@@ -38,13 +42,49 @@ var HelloWorldComponent = /*#__PURE__*/function (_HTMLElement) {
     _classCallCheck(this, HelloWorldComponent);
 
     return _super.call(this); // 
-  } // connect component
+  }
+  /**
+    *  life-cycle: connect component
+    */
 
 
   _createClass(HelloWorldComponent, [{
+    key: "wheels",
+    get: function get() {
+      return this.getAttribute('wheels');
+    },
+    set: function set(newValue) {
+      this.setAttribute('wheels', newValue);
+    }
+  }, {
     key: "connectedCallback",
     value: function connectedCallback() {
-      this.textContent = 'Hello World pep ' + 29;
+      this.textContent = 'Hello World Pep have ' + this.wheels + " wheels";
+    }
+  }, {
+    key: "disconnectedCallback",
+    value: function disconnectedCallback() {
+      console.log('Custom square element removed from page.');
+    }
+  }, {
+    key: "adoptedCallback",
+    value: function adoptedCallback() {
+      console.log('Custom square element moved to new page.');
+    }
+  }, {
+    key: "attributeChangedCallback",
+    value: function attributeChangedCallback(name, oldValue, newValue) {
+      console.log('Custom square element attributes changed.'); //updateStyle(this);
+    }
+  }], [{
+    key: "observedAttributes",
+    get:
+    /**
+     * { item_description }
+     */
+    //wheels = undefined;
+    function get() {
+      return ['wheels'];
     }
   }]);
 

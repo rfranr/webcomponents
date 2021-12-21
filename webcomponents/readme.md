@@ -11,6 +11,9 @@ WebComponents
 	https://kinsta.com/blog/web-components/
 	https://developer.mozilla.org/es/docs/Web/API/HTMLElement
 
+	Atributes vs Properties
+		https://alligator.io/web-components/attributes-properties/
+
 WebAssembly 
 	https://github.com/nrdmn/awesome-zig
 
