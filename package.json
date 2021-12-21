@@ -1,16 +1,17 @@
 {
-  "name": "js",
-  "version": "1.0.0",
+  "name": "rfranr-webcomponents",
+  "version": "0.0.1",
   "description": "",
   "main": "./src/index.js",
   "scripts": {
     "dev": "nodemon --ignore \"**/build/**\" -x \"npm run build\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel ./src  --out-dir ./build",
-    "run": "live-server"
+    "run": "live-server",
+    "start": "serve"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Francesc López Marió",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/cli": "^7.16.0",
@@ -21,6 +22,7 @@
     "@babel/runtime": "^7.6.3"
   },
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.6.0"
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "serve": "^10.0.1"
   }
 }
